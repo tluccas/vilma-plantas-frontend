@@ -1,68 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+/* =========================================
+   2. Variáveis
+   ========================================= */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* Paleta de Cores */
+  --color-background: #ebebeb;  /* ou #42393A*/
+  --color-text: #473f3f;       
+  --color-text-muted: #494949; 
+  
+  --color-primary: #6CC24A;     
+  --color-secondary: #92D050;  
+  --color-accent: #92D050;      
+  
+  --color-surface: #554b4c;    
+  --color-border: #635859;      
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Espaçamento & Layout */
+  --spacing-sm: 0.5rem;   /* 8px */
+  --spacing-md: 1rem;     /* 16px */
+  --spacing-lg: 2rem;     /* 32px */
+  --container-width: 1200px;
+  
+ 
+  --radius-sm: 6px;       
+  --radius-md: 12px;
+  --radius-pill: 50px;    
+  --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.15);
+  
+  --transition-default: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+/* =========================================
+   4. Body e Tipografia
+   ========================================= */
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text);
+  font-weight: 600; 
+  line-height: 1.25;
+  margin-bottom: var(--spacing-md);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+/* Parágrafos */
+p {
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-md);
+  font-weight: 400;
+}
+
+/* Links */
 a {
+  color: var(--color-primary);
+  text-decoration: none;
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  transition: var(--transition-default);
 }
+
 a:hover {
-  color: #535bf2;
+  color: var(--color-secondary);
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+/* =========================================
+   5. Componentes Base
+   ========================================= */
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+/* Botão Primário */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  
+
+  color: var(--color-background); 
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  
+  padding: 0.75rem 1.75rem;
+  border: none;
+  border-radius: var(--radius-pill);
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: var(--transition-default);
+  font-size: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.btn-primary:hover {
+  background-color: var(--color-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Cards (Produtos/Info) */
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  transition: var(--transition-default);
+}
+
+.card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   6. Classes Utilitárias
+   ========================================= */
+
+.page-container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.mt-1 { margin-top: var(--spacing-md); }
+.mt-2 { margin-top: var(--spacing-lg); }
+.mb-1 { margin-bottom: var(--spacing-md); }
+
+/* Texto Destaque */
+.text-highlight {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Inputs */
+input[type="text"], input[type="email"], input[type="search"] {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition-default);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 2px rgba(108, 194, 74, 0.2);
 }
