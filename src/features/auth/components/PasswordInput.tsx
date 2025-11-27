@@ -4,9 +4,11 @@ interface Props {
     label: string;
     value: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    placeholder: string;
+    className?: string;
 }
 
-export default function PasswordInput({ label, value, onChange }: Props) {
+export default function PasswordInput({ label, value, onChange, placeholder, className }: Props) {
     const [showPassword, setShowPassword] = useState(false);
 
     return (
@@ -17,7 +19,9 @@ export default function PasswordInput({ label, value, onChange }: Props) {
                 <input type={showPassword ? "text" : "password"} 
                 value = {value}
                 onChange={onChange}
-                className="w-full h-10 border border-gray-300 rounded-md pl-3! pr-10! text-sm outline-none focus:ring focus:ring-green-500 focus:border-green-500"
+                placeholder={placeholder ? placeholder : ""}
+                className={`w-full h-10 border border-gray-300 rounded-md pl-3 pr-10! text-sm outline-none focus:ring focus:ring-green-500 focus:border-green-500 ${className ? className : ""}`}
+                
                 />
 
                 <button
@@ -27,6 +31,8 @@ export default function PasswordInput({ label, value, onChange }: Props) {
                 >
                     {showPassword ? <i className="bi bi-eye-fill"></i> : <i className="bi bi-eye-slash-fill"></i>}
                 </button>
+
+                
             </div>
         </div>
     );
