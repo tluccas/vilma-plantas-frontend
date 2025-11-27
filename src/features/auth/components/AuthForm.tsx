@@ -25,7 +25,7 @@ export default function AuthForm({ title, children, onSubmit, buttonText, isLoad
             <button
                 type="submit"
                 disabled={isLoading}
-                className={`w-[80%] mt-8! py-3 rounded-lg transition text-white font-medium ${
+                className={`w-[80%] mt-5! py-3 rounded-lg transition text-white font-medium ${
                     isLoading 
                         ? 'bg-gray-400 cursor-not-allowed' // Estilo do Carregamento
                         : 'bg-green-600 hover:bg-green-700'
