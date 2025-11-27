@@ -11,17 +11,21 @@ export default function AuthForm({ title, children, onSubmit, buttonText, isLoad
     return (
         <form
             onSubmit={onSubmit}
-            className="w-full max-w-sm mx-auto mt-10 p-6 bg-white rounded-md shadow"
+             className="w-full max-w-md mx-auto p-6! rounded-xl bg-white shadow-2xl"
         >
+                <img
+                    src="../../../../../../public/logo.png"
+                    alt="Logo"
+                    className="w-20 mx-auto! mb-3!"
+                />
+            <h1 className="text-3xl! font-semibold text-center mb-8">{title}</h1>
 
-            <h1 className="text-2x1 font-semibold text-center mb-6">{title}</h1>
-
-            <div className="flex flex-col gap-4">{children}</div>
-
+            <div className="flex flex-col gap-6 mb-8">{children}</div>
+      
             <button
                 type="submit"
                 disabled={isLoading}
-                className={`w-full mt-4 py-2 rounded-md transition ${
+                className={`w-[80%] mt-8! py-3 rounded-lg transition text-white font-medium ${
                     isLoading 
                         ? 'bg-gray-400 cursor-not-allowed' // Estilo do Carregamento
                         : 'bg-green-600 hover:bg-green-700'
