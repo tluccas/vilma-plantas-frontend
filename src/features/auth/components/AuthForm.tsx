@@ -11,8 +11,11 @@ export default function AuthForm({ title, children, onSubmit, buttonText, isLoad
     return (
         <form
             onSubmit={onSubmit}
-             className="w-full max-w-md mx-auto p-6! rounded-xl bg-white shadow-2xl"
-        >
+             className="relative w-full max-w-md mx-auto p-6 rounded-xl bg-white shadow-2xl overflow-hidden"
+        >       
+                <svg className="absolute -top-px left-0 w-full" viewBox="0 0 1440 80" fill="#16A34A">
+                    <path d="M0,40 C10,80 960,0 1440,80 L1440,0 L0,0 Z"></path>
+                </svg>
                 <img
                     src="../../../../../../public/logo.png"
                     alt="Logo"
@@ -33,6 +36,11 @@ export default function AuthForm({ title, children, onSubmit, buttonText, isLoad
             >
                 {buttonText}
             </button>
+
+            <svg className="absolute -bottom-px left-0 w-full" viewBox="0 0 1440 80" fill="#16A34A">
+                <path d="M0,40 C10,0 960,80 1440,0 L1440,80 L0,80 Z"></path>
+            </svg>
+
         </form>
     );
 }
