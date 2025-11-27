@@ -33,8 +33,8 @@ export default function Login() {
         }
     }
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100">
-            <AuthForm title="Login" 
+        <div className="min-h-screen flex items-center justify-center">
+            <AuthForm title="Entrar" 
             onSubmit={handleLogin} 
             buttonText="Entrar"
             isLoading={loading}>
