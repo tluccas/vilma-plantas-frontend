@@ -11,21 +11,21 @@ export default function PasswordInput({ label, value, onChange }: Props) {
 
     return (
         <div className="flex flex-col gap-1">
-            <label className="text-sm font-medium text-gray-700">{label}</label>
+            <label className="text-lg font-medium text-gray-700">{label}</label>
 
             <div className="relative">
                 <input type={showPassword ? "text" : "password"} 
                 value = {value}
                 onChange={onChange}
-                className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm outline-none focus:ring focus:ring-green-500 focus:border-green-500" 
+                className="w-full h-10 border border-gray-300 rounded-md pl-3! pr-10! text-sm outline-none focus:ring focus:ring-green-500 focus:border-green-500"
                 />
 
                 <button
                 type = "button"
-                className = "absolute right-3 top-1/2 -translate-y-1/2 text-xs text-gray-600"
+                className = "absolute right-3 top-1/2 -translate-y-1/2 text-sm text-gray-600"
                 onClick={() => setShowPassword(!showPassword)}
                 >
-                    {showPassword ? "Ocultar" : "Mostrar"}
+                    {showPassword ? <i className="bi bi-eye-fill"></i> : <i className="bi bi-eye-slash-fill"></i>}
                 </button>
             </div>
         </div>
