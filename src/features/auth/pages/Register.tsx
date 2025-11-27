@@ -11,6 +11,8 @@ export default function Register() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+
 
     async function handleRegister(e: React.FormEvent){
         e.preventDefault();
@@ -18,6 +20,11 @@ export default function Register() {
         if (password.length < 6) {
             alert("A senha deve ter pelo menos 6 caracteres.");
             return; 
+        }
+
+        if (password !== confirmPassword) {
+            alert("As senhas não coincidem.");
+            return;
         }
 
         const registerData = {
@@ -67,17 +74,33 @@ export default function Register() {
 
                 <PasswordInput
                     label="Senha"
-                    placeholder="Sua senha (mín 6 caracteres)"
+                    placeholder="Sua Senha (mín 6 caracteres)"
                     value={password}
                     onChange={(e) => { setPassword(e.target.value)}}
-                    className={password.length < 6 ? "border-red-500" : "border-gray-300"}
+                    className={password.length < 6 && password.length > 0 ? "border-red-500" : "border-gray-300"}
                 />
 
                 {password.length > 0 && password.length < 6 && (
-                    <p className="text-red-500 text-sm -mt-2">
+                    <p className="text-red-500 text-sm -mt-3 -mb-2!">
                         Sua senha deve ter pelo menos 6 caracteres.
                     </p>
-    )}
+                )}
+
+                <PasswordInput 
+                    label="Confirmar Senha"
+                    placeholder="Confirmar Senha"
+                     value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    className={confirmPassword !== password && confirmPassword.length > 0 ? "border-red-500" : "border-gray-300"}
+                    />
+                   
+                   {confirmPassword !== password && confirmPassword.length > 0 &&(
+                    <p className="text-red-500 txt-sm -mt-2 -mb-1!">
+                        As senhas não coincidem.
+                    </p>
+                   )}
+                
+
         </AuthForm>
 
         <p className="mt-5 text-sm text-gray-600">
