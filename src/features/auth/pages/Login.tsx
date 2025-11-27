@@ -33,7 +33,7 @@ export default function Login() {
         }
     }
     return (
-        <div className="min-h-screen flex items-center justify-center">
+        <div className="min-h-screen flex flex-col items-center justify-center">
             <AuthForm title="Entrar" 
             onSubmit={handleLogin} 
             buttonText="Entrar"
@@ -51,6 +51,17 @@ export default function Login() {
                 onChange={(e) => setPassword(e.target.value)}
                 />
             </AuthForm>
+
+            
+            <p className="mt-5 text-sm text-gray-600">
+                Não tem uma conta?
+            <a
+                href="/register"
+                className="ml-1 text-green-600 hover:underline font-medium"
+            >
+                Cadastre-se
+            </a>
+            </p>
         </div>
     );
 }
