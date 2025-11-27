@@ -7,7 +7,7 @@ export const authService = {
     },
 
     register: (data: RegisterData) => {
-         return api.post('/auth/register', data, { withCredentials: true });
+         return api.post('/user/', data, { withCredentials: true });
     },
 
     logout: () => {
