@@ -1,16 +1,21 @@
-import { api } from '../../../lib/api.ts';
+import { api } from "../../../lib/api.ts";
 import type { LoginData, RegisterData } from "../types/AuthTypes.ts";
 
 export const authService = {
-    login: (data: LoginData) => {
-         return api.post('/auth/login', data, { withCredentials: true });
-    },
+  login: (data: LoginData) => {
+    return api.post("/auth/login", data, { withCredentials: true });
+  },
 
-    register: (data: RegisterData) => {
-         return api.post('/user/', data, { withCredentials: true });
-    },
+  register: (data: RegisterData) => {
+    return api.post("/user/", data, { withCredentials: true });
+  },
 
-    logout: () => {
-        return api.post('/auth/logout', {}, { withCredentials: true });
-    }
-}
+  logout: () => {
+    return api.post("/auth/logout", {}, { withCredentials: true });
+  },
+
+  // Verifica se o usuário está autenticado (via cookie)
+  getProfile: () => {
+    return api.get("/auth/profile", { withCredentials: true });
+  },
+};
