@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "../features/auth/pages/Login";
 import Register from "../features/auth/pages/Register";
+import Dashboard from "../pages/Dashboard";
+import ProtectedRoute from "../features/auth/components/ProtectedRoute.tsx";
 
 
 export default function AppRoutes() {
@@ -10,6 +12,12 @@ export default function AppRoutes() {
                 {/* Rotas Publicas */}
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/teste" element={<Dashboard />} />
+
+                {/* Rotas Protegidas */}
+                <Route path="/dashboard" element={
+                    <ProtectedRoute> <Dashboard /> </ProtectedRoute>
+                } />
             </Routes>
         </BrowserRouter>
     );
