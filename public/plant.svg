@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="w-32 mx-auto animate-plant-grow origin-bottom" viewBox="0 0 64 64">
+  <path d="M32 60 V30" stroke="#228B22" stroke-width="4"/>
+  <path d="M32 40 C10 20 20 10 30 25" fill="#228B22"/>
+  <path d="M32 40 C54 20 44 10 34 25" fill="#228B22"/>
+</svg>
