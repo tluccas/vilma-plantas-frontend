@@ -42,7 +42,7 @@
     animation: leafBounce 1.8s ease-in-out infinite;
   }
   .animate-plant-grow {
-    animation: plantGrow 2.3s ease-out forwards;
+    animation: plantGrow 5.3s ease-out forwards infinite;
   }
 }
 
