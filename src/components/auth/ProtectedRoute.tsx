@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from "react";
-import { useAuth } from "../features/auth/hooks/useAuth.ts";
+import { useAuth } from "../../features/auth/hooks/useAuth.ts";
 import { Navigate } from "react-router-dom";
-import Loading from "../pages/Loading.tsx";
+import Loading from "../Loading.tsx";
 
 type PropsWithChildrenProps = PropsWithChildren;
 
