@@ -22,7 +22,7 @@ export default function Loading() {
             clearInterval(timer);
             document.body.style.overflow = "auto";
         };
-      }, []);
+      }, [frases.length]);
 
     return (
         <div className="h-screen w-full bg-(--color-background) flex flex-col items-center justify-center select-none">
