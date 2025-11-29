@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import InputField from "../components/InputField";
 import PasswordInput from "../components/PasswordInput";
 import AuthForm from "../components/AuthForm";
-import { useAuth } from "../hooks/useAuth";
+import { useAuthContext } from "../contexts/useAuthContext";
 import { useNavigate } from "react-router-dom";
 
 export default function Register() {
     const navigate = useNavigate();
-    const { register, loading } = useAuth();
+    const { register, loading } = useAuthContext();
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");

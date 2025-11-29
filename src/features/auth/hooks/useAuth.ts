@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { authService } from "../services/authService";
 import type { LoginData, RegisterData } from "../types/AuthTypes";
+import type { AuthUser } from "../types/AuthUser";
 
 export function useAuth() {
   const [loading, setLoading] = useState(false);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<AuthUser | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isInitialized, setIsInitialized] = useState(false);
 
@@ -13,7 +14,7 @@ export function useAuth() {
 
     try {
       const response = await authService.login(data);
-      const userData = response.data.user;
+      const userData: AuthUser = response.data.user;
       setUser(userData);
       setIsAuthenticated(true);
       return userData;

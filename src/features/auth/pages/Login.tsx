@@ -2,11 +2,11 @@ import { useState } from "react";
 import InputField from "../components/InputField";
 import PasswordInput from "../components/PasswordInput";
 import AuthForm from "../components/AuthForm";
-import { useAuth } from "../hooks/useAuth";
+import { useAuthContext } from "../contexts/useAuthContext";
 // import { Navigate } from "react-router-dom";
 
 export default function Login() {
-    const { login, loading } = useAuth();
+    const { login, loading } = useAuthContext();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
