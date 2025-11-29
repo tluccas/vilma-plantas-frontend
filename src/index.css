@@ -1,5 +1,51 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
+
+/* =========================================
+   1. Animações com Tailwind CSS
+   ========================================= */
+@layer theme {
+  @keyframes leafBounce {
+    0% {
+      transform: scale(0.9) rotate(-3deg);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(1.08) rotate(3deg);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.9) rotate(-3deg);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes plantGrow {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    40%{
+      transform: scale(1.05);
+      opacity: 1;
+    }
+    60% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(1);
+    }
+    
+  }
+
+  .animate-leaf-bounce {
+    animation: leafBounce 1.8s ease-in-out infinite;
+  }
+  .animate-plant-grow {
+    animation: plantGrow 2.3s ease-out forwards;
+  }
+}
+
 /* =========================================
    2. Variáveis
    ========================================= */
@@ -46,8 +92,12 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scrollbar-color: #16A34A #e0e0e0;
+  scrollbar-color: #16a34a #e0e0e0;
   scrollbar-width: thin;
+}
+
+body.no-scroll {
+  overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -55,11 +105,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #e0e0e0; 
+  background: #e0e0e0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #16A34A; 
+  background-color: #16a34a;
   border-radius: 5px;
   border: 2px solid #e0e0e0;
 }
@@ -209,7 +259,7 @@ img {
 }
 
 /* Inputs */
-@layer base {
+@layer utilities {
   input[type="text"],
   input[type="email"],
   input[type="search"] {
