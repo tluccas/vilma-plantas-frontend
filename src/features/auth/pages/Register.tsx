@@ -4,6 +4,7 @@ import PasswordInput from "../components/PasswordInput";
 import AuthForm from "../components/AuthForm";
 import { useAuthContext } from "../contexts/useAuthContext";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 export default function Register() {
     const navigate = useNavigate();
@@ -48,6 +49,10 @@ export default function Register() {
     }
 
     return (
+        <>
+        <Helmet>
+            <title>Cadastre-se | Vilma Plantas</title>
+        </Helmet>
         <div className="min-h-screen flex flex-col items-center justify-center">
             <AuthForm 
             title="Cadastrar-se" 
@@ -119,5 +124,6 @@ export default function Register() {
             </a>
             </p>
         </div>
+        </>
     )
 }
