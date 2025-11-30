@@ -2,13 +2,34 @@ import { api } from "../../../lib/api.ts";
 import type { LoginData, RegisterData } from "../types/AuthTypes.ts";
 
 export const authService = {
-  login: (data: LoginData) => {
-    return api.post("/auth/login", data, { withCredentials: true });
+  login: async (data: LoginData) => {
+    try{
+      const res = await api.post("/auth/login", data, { withCredentials: true });
+      return res.data;
+    } catch (error: unknown) {
+      if (typeof error === "object" && error !== null && "response" in error) {
+        const err = error as { response?: { data?: { message?: string } } };
+        throw new Error(err.response?.data?.message || "Erro desconhecido.");
+      }
+
+      throw new Error("Erro desconhecido.");
+    }
   },
 
-  register: (data: RegisterData) => {
-    return api.post("/user/", data, { withCredentials: true });
-  },
+  register: async (data: RegisterData) => {
+    // return api.post("/user/", data, { withCredentials: true });
+    try{
+      const res = await api.post("/user/", data, { withCredentials: true });
+      return res.data;
+    } catch (error: unknown) {
+        if (typeof error === "object" && error !== null && "response" in error) {
+          const err = error as { response?: { data?: { message?: string } } };
+          throw new Error(err.response?.data?.message || "Erro desconhecido.");
+        }
+
+        throw new Error("Erro desconhecido.");
+      }
+    },
 
   logout: () => {
     return api.post("/auth/logout", {}, { withCredentials: true });
