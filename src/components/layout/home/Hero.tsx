@@ -190,7 +190,7 @@ export default function Hero() {
                                     style={{ backgroundColor: "#92d050" }}
                                 ></div>
 
-                                <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-500">
+                                 <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-500">
                                     <img
                                         src="https://images.unsplash.com/photo-1583753075968-1236ccb83c66?q=80&w=454&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                         alt="Plantas - Vilma Plantas"
@@ -198,33 +198,8 @@ export default function Hero() {
                                         style={{ aspectRatio: "3/4" }}
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                                </div>
+                                </div> 
 
-                                <div
-                                    className="absolute top-3 right-3 w-12 h-12 rounded-full flex items-center justify-center shadow-lg animate-bounce"
-                                    style={{ backgroundColor: "#6cc24a" }}
-                                >
-                                    <i className="bi bi-leaf text-white text-xl"></i>
-                                </div>
-
-                                <div
-                                    className="absolute bottom-4 left-4 px-3 py-1 rounded-full shadow-lg backdrop-blur-sm"
-                                    style={{
-                                        backgroundColor: "rgba(255, 255, 255, 0.9)",
-                                        border: "1px solid rgba(108, 194, 74, 0.3)",
-                                    }}
-                                >
-                                    <span
-                                        className="text-sm font-semibold"
-                                        style={{ color: "#473f3f" }}
-                                    >
-                                        <i
-                                            className="bi bi-star-fill mr-1"
-                                            style={{ color: "#6cc24a" }}
-                                        ></i>
-                                        4.9/5
-                                    </span>
-                                </div>
                             </div>
                         </div>
                     </div>
