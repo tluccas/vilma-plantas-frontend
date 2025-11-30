@@ -3,15 +3,19 @@ import InputField from "../components/InputField";
 import PasswordInput from "../components/PasswordInput";
 import AuthForm from "../components/AuthForm";
 import { useAuthContext } from "../contexts/useAuthContext";
-// import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Login() {
+    const navigate = useNavigate();
     const { login, loading } = useAuthContext();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
 
     async function handleLogin(e: React.FormEvent){
         e.preventDefault();
+        setErrorMessage("");
         const LoginData = { 
             email, 
             password 
@@ -21,13 +25,13 @@ export default function Login() {
             await login(LoginData);
             alert("Login realizado com sucesso!");
 
-            // Navigate("/rota-depois-do-login"); Implementar depois
+            navigate("/");
         } catch (error) {
             if (error instanceof Error) {
-                alert(`Erro ao fazer login: ${error.message}`);
+                setErrorMessage(error.message);
                 console.error("Erro ao fazer login:", error);
             }else {
-                alert("Erro desconhecido ao fazer login.");
+                setErrorMessage("Erro desconhecido ao fazer login.");
             }
             
         }
@@ -44,7 +48,12 @@ export default function Login() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 />
-                
+                {/* Mensagem de erro */}
+                {errorMessage && (
+                    <div className="w-full text-center bg-red-100 border border-red-300 text-red-700 px-3 py-2 rounded-md mb-4">
+                        {errorMessage}
+                    </div>
+                )}
                 <PasswordInput
                 label="Senha"
                 placeholder=""
