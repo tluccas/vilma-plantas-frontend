@@ -1,4 +1,5 @@
 import SidebarItem from "./SlidebarItem.tsx";
+import { useAuthContext } from "../../../features/auth/contexts/useAuthContext.ts";
 
 interface Props {
   section: string;
@@ -6,6 +7,16 @@ interface Props {
 }
 
 export default function Sidebar({ section, setSection }: Props) {
+  const { logout } = useAuthContext();
+
+  async function handleLogout() {
+    try {
+      await logout();
+    } catch (error) {
+      console.error("Erro ao fazer logout:", error);
+    }
+  }
+
   return (
     <aside className="w-64 border-r-3 border-(--color-border) p-6 flex flex-col">
       
@@ -21,7 +32,9 @@ export default function Sidebar({ section, setSection }: Props) {
       </nav>
 
       <div className="mt-auto pt-6">
-        <button className="w-full flex items-center gap-3 py-2 px-3 rounded-md text-sm font-medium text-red-400 hover:bg-red-500/10 transition-all">
+        <button className="w-full flex items-center gap-3 py-2 px-3 rounded-md text-sm font-medium text-red-400 hover:bg-red-500/10 transition-all"
+          onClick={handleLogout}
+        >
           <i className="bi bi-box-arrow-right" style={{ fontSize: '18px' }} /> Sair
         </button>
       </div>
