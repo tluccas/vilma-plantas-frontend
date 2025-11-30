@@ -13,17 +13,17 @@ export default function Register() {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
+    const [errorMessage, setErrorMessage] = useState("");
+
 
     async function handleRegister(e: React.FormEvent){
         e.preventDefault();
-
+        setErrorMessage("");
         if (password.length < 6) {
-            alert("A senha deve ter pelo menos 6 caracteres.");
             return; 
         }
 
         if (password !== confirmPassword) {
-            alert("As senhas não coincidem.");
             return;
         }
 
@@ -35,14 +35,14 @@ export default function Register() {
 
         try{
             await register(registerData);
-            alert("Cadastro realizado com sucesso! Agora você pode fazer login.");
+            setErrorMessage("Cadastro realizado com sucesso! Agora você pode fazer login.");
             navigate("/login");
         }catch(error){
             if (error instanceof Error) {
-                alert(`Erro ao cadastrar: ${error.message}`);
+                setErrorMessage(`Erro ao cadastrar: ${error.message}`);
                 console.error("Erro ao cadastrar:", error);
             } else {
-                alert("Erro desconhecido ao cadastrar.");
+                setErrorMessage("Erro desconhecido ao cadastrar.");
             }
         }       
     }
@@ -71,6 +71,12 @@ export default function Register() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
+                  {/* Mensagem de erro */}
+                {errorMessage && (
+                    <div className="w-full text-center bg-red-100 border border-red-300 text-red-700 px-3 py-2 rounded-md mb-4">
+                        {errorMessage}
+                    </div>
+                )}
 
                 <PasswordInput
                     label="Senha"
@@ -81,9 +87,9 @@ export default function Register() {
                 />
 
                 {password.length > 0 && password.length < 6 && (
-                    <p className="text-red-500 text-sm -mt-3 -mb-2!">
+                   <div className="w-full text-center bg-red-100 border border-red-300 text-red-700 px-3 py-2 rounded-md mb-4">
                         Sua senha deve ter pelo menos 6 caracteres.
-                    </p>
+                    </div>
                 )}
 
                 <PasswordInput 
@@ -95,9 +101,9 @@ export default function Register() {
                     />
                    
                    {confirmPassword !== password && confirmPassword.length > 0 &&(
-                    <p className="text-red-500 txt-sm -mt-2 -mb-1!">
+                    <div className="w-full text-center bg-red-100 border border-red-300 text-red-700 px-3 py-2 rounded-md mb-4">
                         As senhas não coincidem.
-                    </p>
+                    </div>
                    )}
                 
 
