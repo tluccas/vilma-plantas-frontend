@@ -14,7 +14,7 @@ export function useAuth() {
 
     try {
       const response = await authService.login(data);
-      const userData: AuthUser = response.data.user;
+      const userData: AuthUser = response.user;
       setUser(userData);
       setIsAuthenticated(true);
       return userData;
@@ -28,7 +28,7 @@ export function useAuth() {
 
     try {
       const response = await authService.register(data);
-      const userData = response.data.user;
+      const userData = response.user;
       setUser(userData);
       setIsAuthenticated(true);
       return userData;
