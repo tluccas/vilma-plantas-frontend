@@ -4,11 +4,16 @@ import Overview from "../components/layout/Dashboard/sections/Overview";
 import Orders from "../components/layout/Dashboard/Orders";
 import UserProfilePage from "../components/layout/Dashboard/sections/UserProfilePage";
 import Settings from "../components/layout/Dashboard/sections/Settings";
+import { Helmet } from "react-helmet-async";
 
 export default function Dashboard() {
   const [section, setSection] = useState("overview");
 
   return (
+    <>
+    <Helmet>
+      <title>Dashboard | Vilma Plantas</title>
+    </Helmet>
     <div className="flex min-h-screen bg-(--color-background) text-(--color-text)">
       
       <Sidebar section={section} setSection={setSection} />
@@ -20,5 +25,6 @@ export default function Dashboard() {
         {section === "settings" && <Settings />}
       </main>
     </div>
+    </>
   );
 }
