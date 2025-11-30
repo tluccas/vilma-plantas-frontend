@@ -4,6 +4,7 @@ import PasswordInput from "../components/PasswordInput";
 import AuthForm from "../components/AuthForm";
 import { useAuthContext } from "../contexts/useAuthContext";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 export default function Login() {
@@ -37,6 +38,11 @@ export default function Login() {
         }
     }
     return (
+        <>
+        <Helmet>
+            <title>Login | Vilma Plantas</title>
+        </Helmet>
+
         <div className="min-h-screen flex flex-col items-center justify-center">
             <AuthForm title="Entrar" 
             onSubmit={handleLogin} 
@@ -73,5 +79,6 @@ export default function Login() {
             </a>
             </p>
         </div>
+        </>
     );
 }
