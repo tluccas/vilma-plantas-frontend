@@ -128,35 +128,6 @@ section {
   background-color: #006616;
 }
 
-/* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--color-text);
-  font-weight: 600;
-  line-height: 1.25;
-  margin-bottom: var(--spacing-md);
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-h2 {
-  font-size: 2rem;
-}
-h3 {
-  font-size: 1.5rem;
-}
-
-/* Parágrafos */
-p {
-  color: var(--color-text-muted);
-  margin-bottom: var(--spacing-md);
-  font-weight: 400;
-}
 
 /* Links */
 a.default-link {
@@ -172,8 +143,6 @@ a.default-link:hover {
 
 img {
   max-width: 100%;
-  height: auto;
-  display: block;
 }
 
 /* =========================================
