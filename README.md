@@ -102,9 +102,9 @@ vilma-plantas/
 ## 🗺️ Roadmap
 
 - [x] Configuração inicial com Vite e TypeScript
-- [ ] Configuração do TailwindCSS
+- [x] Configuração do TailwindCSS
 - [ ] Desenvolvimento dos componentes base
-- [ ] Integração com a API Backend
+- [ ] Integração  com a API Backend
 - [ ] Implementação do Carrinho de Compras
 - [ ] Deploy da aplicação
 
