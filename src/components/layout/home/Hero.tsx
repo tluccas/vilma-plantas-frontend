@@ -14,8 +14,8 @@ export default function Hero() {
 
     return (
         <section
-            className="px-4 sm:px-6 lg:px-8 py-4 lg:py-6"
-            style={{ backgroundColor: "#ebebeb" }}
+            className="px-4 sm:px-6 lg:px-8 py-4 lg:py-6 bg-(--color-background)"
+        
         >
                 <div className="max-w-6xl mx-auto w-full">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center">
@@ -197,7 +197,7 @@ export default function Hero() {
                                         className="w-full h-auto max-w-sm lg:max-w-md object-cover"
                                         style={{ aspectRatio: "3/4" }}
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                                    <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent"></div>
                                 </div> 
 
                             </div>
