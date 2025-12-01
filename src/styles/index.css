@@ -51,7 +51,7 @@
    ========================================= */
 :root {
   /* Paleta de Cores */
-  --color-background: #ebebeb; /* ou #42393A*/
+  --color-background: #f9f8f3; /* ou #42393A*/
   --color-text: #473f3f;
   --color-text-muted: #494949;
 
@@ -61,7 +61,13 @@
 
   --color-surface: #554b4c;
   --color-border: #635859;
+  /* Buttons colors */
+  --button-primary-bg: #6cc24a;
 
+  --button-secondary-hover-bg: #554b4c;
+
+  /* Section bg alt */
+  --color-section-alt-bg: #d6d6d6;
   /* Espaçamento & Layout */
   --spacing-sm: 0.5rem; /* 8px */
   --spacing-md: 1rem; /* 16px */
@@ -98,6 +104,10 @@ body {
 
 body.no-scroll {
   overflow: hidden;
+}
+
+section {
+  margin-bottom: 3rem;
 }
 
 ::-webkit-scrollbar {
