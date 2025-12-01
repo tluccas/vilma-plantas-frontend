@@ -159,14 +159,14 @@ p {
 }
 
 /* Links */
-a {
+a.default-link {
   color: var(--color-primary);
   text-decoration: none;
   font-weight: 500;
   transition: var(--transition-default);
 }
 
-a:hover {
+a.default-link:hover {
   color: var(--color-secondary);
 }
 
@@ -179,36 +179,6 @@ img {
 /* =========================================
    5. Componentes Base
    ========================================= */
-
-/* Botão Primário */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-primary);
-
-  color: var(--color-background);
-  font-weight: 600;
-  letter-spacing: 0.5px;
-
-  padding: 0.75rem 1.75rem;
-  border: none;
-  border-radius: var(--radius-pill);
-  cursor: pointer;
-  transition: var(--transition-default);
-  font-size: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.btn-primary:hover {
-  background-color: var(--color-secondary);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-.btn-primary:active {
-  transform: translateY(0);
-}
 
 /* Cards (Produtos/Info) */
 .card-prods {
