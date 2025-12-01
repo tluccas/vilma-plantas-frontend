@@ -5,7 +5,7 @@ export default function Footer() {
                     <div className="md:flex md:justify-between">
                     <div className="mb-6 md:mb-0">
                         <a href="https://vilma-plantas.netlify.app/" className="flex items-center">
-                            <img src="../../../../public/logo.png" className="h-15 me-3" alt="Vilma Plantas Logo" />
+                            <img src="/logo.png" className="h-15 me-3" alt="Vilma Plantas Logo" />
                             <span className="text-heading self-center text-2xl font-semibold whitespace-nowrap">Vilma Plantas</span>
                             
                         </a>
