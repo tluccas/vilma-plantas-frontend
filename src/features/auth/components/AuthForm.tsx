@@ -17,7 +17,7 @@ export default function AuthForm({ title, children, onSubmit, buttonText, isLoad
                     <path d="M0,40 C10,80 960,0 1440,80 L1440,0 L0,0 Z"></path>
                 </svg>
                 <img
-                    src="../../../../../../public/logo.png"
+                    src="../../../../public/logo.png"
                     alt="Vilma Plantas - Logo"
                     className="w-20 mx-auto! mb-3!"
                 />
