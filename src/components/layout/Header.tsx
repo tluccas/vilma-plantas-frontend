@@ -21,7 +21,7 @@ export default function Header() {
     ];
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white shadow-sm ">
+        <header className="sticky top-0 z-50 w-full border-b border-white bg-(--color-background) shadow-md ">
             <nav className="flex w-full items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
                 
                 {/* Logo - Seção esquerda */}
@@ -43,7 +43,7 @@ export default function Header() {
                         <a
                             key={item.name}
                             href={item.href}
-                            className="group flex items-center space-x-2 px-3 py-2 text-sm font-medium text-gray-700 rounded-lg transition-all duration-300 hover:text-green-600 hover:bg-green-50"
+                            className="group flex items-center space-x-2 px-3 py-2 text-sm font-medium text-gray-700 rounded-lg transition-all duration-300 hover:text-green-700 hover:bg-black/10"
                         >
                             <i className={`bi ${item.icon} text-lg group-hover:scale-110 transition-transform duration-300`}></i>
                             <span>{item.name}</span>
