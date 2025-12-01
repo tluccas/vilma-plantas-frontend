@@ -7,19 +7,19 @@ export default function TopCategories() {
       <div className="categories-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mt-6 justify-center">
         <CategoriesCards 
           title="Orquídeas" 
-          img="/images/plants/orquidea-card.jpg" 
+          img="/images/plants/orquidea-card.webp" 
         />
         <CategoriesCards 
           title="Suculentas" 
-          img="/images/plants/suculentas-card.jpg" 
+          img="/images/plants/suculentas-card.webp" 
         />
         <CategoriesCards 
           title="Samambaias" 
-          img="/images/plants/samambaia-card.jpg" 
+          img="/images/plants/samambaia-card.webp" 
         />
         <CategoriesCards 
           title="Rosas" 
-          img="/images/plants/rose-card.jpg" 
+          img="/images/plants/rose-card.webp" 
         />
       </div>
     </section>

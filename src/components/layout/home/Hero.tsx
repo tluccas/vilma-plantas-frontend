@@ -192,9 +192,9 @@ export default function Hero() {
 
                                  <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-500">
                                     <img
-                                        src="/images/plants/hero-img.jpg"
+                                        src="/images/plants/hero-img.webp"
                                         alt="Plantas - Vilma Plantas"
-                                        className="w-full h-auto max-w-sm lg:max-w-md object-cover"
+                                        className="w-full h-auto max-w-xs lg:max-w-md object-cover"
                                         style={{ aspectRatio: "3/4" }}
                                     />
                                     <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent"></div>
