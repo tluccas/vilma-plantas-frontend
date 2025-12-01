@@ -192,7 +192,7 @@ export default function Hero() {
 
                                  <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-500">
                                     <img
-                                        src="https://images.unsplash.com/photo-1583753075968-1236ccb83c66?q=80&w=454&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        src="/images/plants/hero-img.jpg"
                                         alt="Plantas - Vilma Plantas"
                                         className="w-full h-auto max-w-sm lg:max-w-md object-cover"
                                         style={{ aspectRatio: "3/4" }}
