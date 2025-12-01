@@ -29,6 +29,7 @@ export default function Loading() {
       {/* Ícone com animação */}
       <img src="../../public/plant.svg"
       className= "w-32 animate-plant-grow origin-bottom"
+      alt="Carregando - Ícone de planta"
       />
       {/* Texto */}
       <p className="mt-6 text-(--color-text-muted) text-lg font-medium tracking-wide">

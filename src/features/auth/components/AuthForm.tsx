@@ -18,7 +18,7 @@ export default function AuthForm({ title, children, onSubmit, buttonText, isLoad
                 </svg>
                 <img
                     src="../../../../../../public/logo.png"
-                    alt="Logo"
+                    alt="Vilma Plantas - Logo"
                     className="w-20 mx-auto! mb-3!"
                 />
             <h1 className="text-3xl! font-semibold text-center mb-8">{title}</h1>
