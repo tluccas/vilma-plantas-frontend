@@ -1,5 +1,6 @@
 import Header from "../components/layout/Header";
 import Hero from "../components/layout/home/Hero";
+import Footer from "../components/layout/Footer";
 import TopCategories from "../components/layout/home/TopCategories";
 import { Helmet } from "react-helmet-async";
 
@@ -16,6 +17,7 @@ export default function Home() {
                         <TopCategories />
                     
                 </main>
+                <Footer />
             </div>
         </>
     );
