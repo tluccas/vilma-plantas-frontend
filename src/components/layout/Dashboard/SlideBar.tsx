@@ -13,7 +13,7 @@ export default function Sidebar({ section, setSection }: Props) {
     try {
       await logout();
     } catch (error) {
-      console.error("Erro ao fazer logout:", error);
+      // console.error("Erro ao fazer logout:", error);
     }
   }
 

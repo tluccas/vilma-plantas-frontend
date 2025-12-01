@@ -30,7 +30,7 @@ export default function LogoutButton({ variant = "danger", size = "md", classNam
       await logout();
       // Redirecionamento será feito automaticamente pelas rotas protegidas
     } catch (error) {
-      console.error("Erro ao fazer logout:", error);
+      // console.error("Erro ao fazer logout:", error);
     }
   }
 

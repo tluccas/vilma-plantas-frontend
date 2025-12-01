@@ -41,7 +41,7 @@ export default function Register() {
         }catch(error){
             if (error instanceof Error) {
                 setErrorMessage(`Erro ao cadastrar: ${error.message}`);
-                console.error("Erro ao cadastrar:", error);
+                // console.error("Erro ao cadastrar:", error);
             } else {
                 setErrorMessage("Erro desconhecido ao cadastrar.");
             }

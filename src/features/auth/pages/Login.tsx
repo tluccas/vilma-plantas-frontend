@@ -30,7 +30,7 @@ export default function Login() {
         } catch (error) {
             if (error instanceof Error) {
                 setErrorMessage(error.message);
-                console.error("Erro ao fazer login:", error);
+                // console.error("Erro ao fazer login:", error);
             }else {
                 setErrorMessage("Erro desconhecido ao fazer login.");
             }
