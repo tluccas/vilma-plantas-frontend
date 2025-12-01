@@ -112,8 +112,7 @@ export default function Header() {
                         {/* Header do menu mobile */}
                         <div className="flex items-center justify-between mb-6">
                             <a href="/" className="flex items-center space-x-2">
-                                <img className="h-8 w-auto" src="/logo.png" alt="Vilma Plantas" />
-                                <span className="text-lg font-bold text-gray-800">Vilma Plantas</span>
+                                <img className="h-35! w-auto" src="/logo.png" alt="Vilma Plantas" />
                             </a>
                             <button
                                 type="button"
