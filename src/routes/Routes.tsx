@@ -8,6 +8,7 @@ export default function AppRoutes() {
     const Login = lazy(() => import("../features/auth/pages/Login"));
     const Register = lazy(() => import("../features/auth/pages/Register"));
     const Home = lazy(() => import("../pages/Home"));
+    const NotFound = lazy(() => import("../pages/NotFound"));
     return (
         <BrowserRouter>
             <Routes>
@@ -43,7 +44,12 @@ export default function AppRoutes() {
                         </ProtectedRoute>
                     }
                 />
-
+                <Route path="*" element={
+                        <Suspense fallback={<Loading/>}>
+                            <NotFound/>
+                        </Suspense>
+                    } 
+                />
             </Routes>
         </BrowserRouter>
     );
