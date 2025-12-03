@@ -9,7 +9,7 @@ export default function TopCategories({ title, img, redirectUrl }: TopCategories
     return ( 
         <div className="bg-neutral-primary-soft w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg border border-transparent transition-transform hover:-translate-y-2 rounded-2xl shadow-xl/30 overflow-hidden mx-auto">
             <a href="#">
-                <img className="rounded-t-base w-full h-48! object-cover" src={img} alt={`Categoria ${title}`} />
+                <img className="rounded-t-base w-full h-48! object-cover" src={img} loading="lazy" />
             </a>
             <div className="p-6 text-center">
                 <span className="inline-flex items-center bg-white border border-gray-400 text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm select-none">
