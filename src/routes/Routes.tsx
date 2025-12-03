@@ -1,23 +1,49 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "../features/auth/pages/Login";
-import Register from "../features/auth/pages/Register";
-import Dashboard from "../pages/Dashboard";
 import ProtectedRoute from "../features/auth/components/ProtectedRoute.tsx";
-import Home from "../pages/Home.tsx";
+import Loading from "../components/Loading.tsx";
+import { lazy, Suspense } from "react";
 export default function AppRoutes() {
+
+    const Dashboard = lazy(() => import("../pages/Dashboard"));
+    const Login = lazy(() => import("../features/auth/pages/Login"));
+    const Register = lazy(() => import("../features/auth/pages/Register"));
+    const Home = lazy(() => import("../pages/Home"));
     return (
         <BrowserRouter>
             <Routes>
                 {/* Rotas Publicas */}
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/" element={<Home />} />
+                <Route path="/login" element={
+                        <Suspense fallback= {<Loading />}>
+                            <Login/>
+                        </Suspense>
+                    }
+                />
+                <Route path="/register" element={
+                        <Suspense fallback= {<Loading />}>
+                            <Register/>
+                        </Suspense>
+                    }
+                />
+                <Route path="/" element={
+                        <Suspense fallback={<Loading/>}>
+                            <Home/>
+                        </Suspense>
+                    } 
+                />
                 {/* <Route path="/teste" element={<Hero />} /> */}
 
                 {/* Rotas Protegidas */}
-                <Route path="/dashboard" element={
-                    <ProtectedRoute> <Dashboard /> </ProtectedRoute>
-                } />
+                 <Route
+                    path="/dashboard"
+                    element={
+                        <ProtectedRoute>
+                            <Suspense fallback={<Loading />}>
+                                <Dashboard />
+                            </Suspense>
+                        </ProtectedRoute>
+                    }
+                />
+
             </Routes>
         </BrowserRouter>
     );
