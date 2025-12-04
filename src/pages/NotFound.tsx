@@ -14,10 +14,10 @@ export default function NotFound() {
     return(
         <>
         <Header />
-        <div className="flex flex-col items-center justify-center min-h-screen p-4">
-        <h1 className="font-bold">Ops, página não encontrada</h1>
+        <div className="flex flex-col items-center justify-center min-h-screen p-4 md:p-6 lg:p-10">
+        <h1 className="font-bold tex-xl md:text-2xl lg:text-3xl">Ops, página não encontrada</h1>
         <Lottie
-            className="mb-10" 
+            className="mb-10 w-90!  md:w-100! md:h-100! lg:w-110! lg:h-110!" 
             animationData={animationData}
             loop={true}
             style={ {width: 500, height: 500} }
