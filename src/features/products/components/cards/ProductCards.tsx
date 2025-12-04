@@ -1,41 +1,54 @@
-import type { ProductModel } from "../../types/ProductType"
+import type { ProductModel } from "../../types/ProductType";
 
 type ProductCardProps = {
-    product: ProductModel;
-}
+  product: ProductModel;
+  redirectUrl: string;
+};
 
-type ProductPage = {
-    redirectUrl: string;
-}
-
-export function ProductCards({ product }: ProductCardProps, { redirectUrl }: ProductPage) {
-    return (
-           <div className="bg-neutral-primary-soft w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg border border-transparent transition-transform hover:-translate-y-2 rounded-2xl shadow-xl/30 overflow-hidden mx-auto">
-             <div className="w-full aspect-5/3 overflow-hidden">
-                <img
-                // src={product.image} IMPLEMENTAR APOS ALTERAÇÕES NO BACK E NO TYPE
-                className="w-full h-full object-cover"
-                loading="lazy"
-                />
-            </div>
-            <div className="p-6 text-center">
-                <span className="inline-flex items-center bg-white border border-gray-400 text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm select-none">
-                    <i className="bi bi-flower3 text-green-500 mr-1"></i>
-                    {product.category.name}
-                </span>
-                {/* Redirecionar para pagina do produto */}
-                <a href={redirectUrl}>
-                    <h5 className="mt-3 mb-6 text-2xl font-semibold tracking-tight text-heading">{product.name}</h5>
-                </a>
-                 <p className="mb-6 text-body">{
-                    product.description.length > 100 ? product.description.substring(0, 97) + "..." : product.description
-                    }</p>
-                {/* Redirecionar para pagina do produto */}
-                <a href={redirectUrl} className="inline-flex items-center text-white! bg-(--button-primary-bg) box-border border border-transparent rounded-3xl hover:bg-(--button-secondary-hover-bg) focus:ring-4 focus:ring-brand-medium shadow-xl font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none transition duration-300 ease-in-out select-none">
-                    Comprar
-                    <svg className="w-4 h-4 ms-1.5 rtl:rotate-180 -me-0.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/></svg>
-                </a>
-            </div>
+export function ProductCards({ product, redirectUrl }: ProductCardProps) {
+  return (
+    <div className="max-w-md mx-auto rounded-md overflow-hidden shadow-md transition-transform hover:scale-103">
+      <div className="relative w-full h-40 sm:h-48 lg:h-56 overflow-hidden">
+        <img
+          className="w-full h-full object-cover"
+          src={product.images[0]?.url}
+          alt="Product Image"
+        />
+      </div>
+      <div className="p-4">
+        <h3 className="text-lg font-medium mb-2">{product.name}</h3>
+        <p className="text-gray-600 text-sm mb-4">
+          {product.description.length > 150
+            ? product.description.substring(0, 147) + "..."
+            : product.description}
+        </p>
+        <div className="flex items-center justify-between">
+          <span className="font-bold text-lg">${product.price}</span>
+          <a
+            href={redirectUrl}
+            className="inline-flex items-center text-white! bg-(--button-primary-bg) box-border border border-transparent rounded-3xl hover:bg-(--button-secondary-hover-bg) focus:ring-4 focus:ring-brand-medium shadow-xl font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none transition duration-300 ease-in-out select-none"
+          >
+            Comprar
+            <svg
+              className="w-4 h-4 ms-1.5 rtl:rotate-180 -me-0.5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 12H5m14 0-4 4m4-4-4-4"
+              />
+            </svg>
+          </a>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
