@@ -38,5 +38,6 @@ export function mapProduct(product: ProductResponse) {
     category: {
         name: product.category.name,
     },
+    images: product.images,
     };
 }

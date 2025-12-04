@@ -10,6 +10,7 @@ export interface ProductResponse {
   category: {
     name: string;
   };
+  images: ProductImage[];
 }
 
 export interface ProductTypeResponse {
@@ -29,4 +30,9 @@ export interface ProductModel {
   category: {
     name: string;
   };
+  images: ProductImage[];
+}
+
+export interface ProductImage {
+  url: string;
 }
