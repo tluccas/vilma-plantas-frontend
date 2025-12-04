@@ -4,6 +4,7 @@ import Footer from "../components/layout/Footer";
 import TopCategories from "../components/layout/home/TopCategories";
 import { Helmet } from "react-helmet-async";
 import Delivery from "../components/layout/home/Delivery";
+import HomeProducts from "../components/layout/home/HomeProducts";
 
 export default function Home() {
     return (
@@ -15,8 +16,9 @@ export default function Home() {
                 <Header />
                 <main className="py-20">
                         <Hero />  
-                        <TopCategories />
                         < Delivery />
+                        <TopCategories />
+                        <HomeProducts />
                 </main>
                 <Footer />
             </div>
