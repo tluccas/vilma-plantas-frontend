@@ -4,6 +4,7 @@ import Overview from "../components/layout/Dashboard/sections/Overview";
 import Orders from "../components/layout/Dashboard/Orders";
 import UserProfilePage from "../components/layout/Dashboard/sections/UserProfilePage";
 import Settings from "../components/layout/Dashboard/sections/Settings";
+import Category from "../components/layout/Dashboard/sections/Category";
 import { Helmet } from "react-helmet-async";
 
 export default function Dashboard() {
@@ -23,6 +24,7 @@ export default function Dashboard() {
         {section === "orders" && <Orders />}
         {section === "profile" && <UserProfilePage />}
         {section === "settings" && <Settings />}
+        {section === "categories" && <Category />}
       </main>
     </div>
     </>
