@@ -10,7 +10,7 @@ function SidebarItem({ icon, label, active, onClick }: SlideBarItemsProps) {
     <button
       onClick={onClick}
       className={`flex items-center gap-3 px-3 py-2 rounded-md font-medium transition-all
-       ${active ? "bg-(--color-primary) text-(--color-background)" : "hover:bg-black/10"}`}
+       ${active ? "bg-green-700 text-(--color-background)" : "hover:bg-black/10"}`}
     >
       {icon} {label}
     </button>

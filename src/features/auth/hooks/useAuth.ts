@@ -9,6 +9,8 @@ export function useAuth() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isInitialized, setIsInitialized] = useState(false);
 
+  const isAdmin = user?.role?.toLowerCase() === "admin";
+
   async function login(data: LoginData) {
     setLoading(true);
 
@@ -73,6 +75,7 @@ export function useAuth() {
     user,
     isAuthenticated,
     isInitialized,
+    isAdmin,
     checkAuth,
   };
 }

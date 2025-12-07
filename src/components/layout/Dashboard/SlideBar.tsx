@@ -7,13 +7,13 @@ interface Props {
 }
 
 export default function Sidebar({ section, setSection }: Props) {
-  const { logout } = useAuthContext();
+  const { logout, isAdmin } = useAuthContext();
 
   async function handleLogout() {
     try {
       await logout();
     } catch (error) {
-      // console.error("Erro ao fazer logout:", error);
+      console.error("Erro ao fazer logout:", error);
     }
   }
 
@@ -29,6 +29,9 @@ export default function Sidebar({ section, setSection }: Props) {
         <SidebarItem label="Pedidos" icon={<i className="bi bi-bag" style={{ fontSize: '18px' }} />} onClick={() => setSection("orders")} active={section === "orders"} />
         <SidebarItem label="Meu Perfil" icon={<i className="bi bi-person" style={{ fontSize: '18px' }} />} onClick={() => setSection("profile")} active={section === "profile"} />
         <SidebarItem label="Configurações" icon={<i className="bi bi-gear" style={{ fontSize: '18px' }} />} onClick={() => setSection("settings")} active={section === "settings"} />
+        {isAdmin && (
+          <SidebarItem label="Gerenciar Categorias" icon={<i className="bi bi-tags-fill" style={{ fontSize: '18px' }} />} onClick={() => setSection("categories")} active={section === "categories"} />
+        )}
       </nav>
 
       <div className="mt-auto pt-6">
