@@ -3,7 +3,7 @@ import { useAuthContext } from "../../../../features/auth/contexts/useAuthContex
 import CategoryTableRow from "./components/CategoryTableRow";
 import type { CategoryResponse } from "../../../../features/products/types/CategoryType";
 import { CategoryService } from "../../../../features/products/api/CategoryService";
-import CategoryFormCreate from "./components/CategoryForm";
+import CategoryFormCreate from "./components/forms/CategoryForm";
 
 const categoryService = new CategoryService();
 
