@@ -57,26 +57,34 @@ export default function CategoryTableRow({
           ? description.substring(0, 147) + "..."
           : description}
       </td>
-      <td className="p-6 space-x-4 grid grid-cols-2 justify-center">
+      <td className="p-6 text-center align-middle">
         {isAdmin && (
           <>
-            <button
-              className="font-medium text-base text-green-600 transition hover:scale-110 hover:text-green-700"
-              onClick={() => onEdit(category)}
-            >
-              <i className="bi bi-pencil-fill"></i>
-            </button>
-            <button
-              onClick={handleDelete}
-              disabled={isDeleting}
-              className="font-medium text-base text-red-600 hover:cursor-pointer hover:text-red-700 transition hover:scale-110 disabled:opacity-50"
-            >
-              {isDeleting ? (
-                "Deletando..."
-              ) : (
-                <i className="bi bi-trash-fill hover:text-red-800 "></i>
-              )}
-            </button>
+            <div className="flex justify-center items-center gap-4">
+              {/* Botão Editar Categoria */}
+              <button
+                onClick={() => onEdit(category)}
+                className="flex items-center justify-center w-9 h-9 hover:cursor-pointer rounded-lg border border-green-100 bg-green-50 text-green-600 transition-all duration-200 hover:bg-green-600 hover:text-white hover:shadow-md hover:shadow-green-100 active:scale-95"
+                title="Editar Categoria"
+              >
+                <i className="bi bi-pencil-square text-lg"></i>
+              </button>
+
+              {/* Botão Deletar Categoria */}
+              <button
+                onClick={handleDelete}
+                disabled={isDeleting}
+                className="flex items-center justify-center w-9 h-9 hover:cursor-pointer rounded-lg border border-red-100 bg-red-50 text-red-600 transition-all duration-200 hover:bg-red-600 hover:text-white hover:shadow-md hover:shadow-red-100 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+                title="Excluir Categoria"
+              >
+                {isDeleting ? (
+                  /* Spinner minimalista para não deformar o botão */
+                  <div className="h-4 w-4 border-2 border-red-200 border-t-red-600 rounded-full animate-spin"></div>
+                ) : (
+                  <i className="bi bi-trash-fill text-base"></i>
+                )}
+              </button>
+            </div>
           </>
         )}
       </td>
