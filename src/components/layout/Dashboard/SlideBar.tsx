@@ -32,6 +32,10 @@ export default function Sidebar({ section, setSection }: Props) {
         {isAdmin && (
           <SidebarItem label="Gerenciar Categorias" icon={<i className="bi bi-tags-fill" style={{ fontSize: '18px' }} />} onClick={() => setSection("categories")} active={section === "categories"} />
         )}
+
+        {isAdmin && (
+          <SidebarItem label="Gerenciar Produtos" icon={<i className="bi bi-bag-fill" style={{ fontSize: '18px' }} />} onClick={() => setSection("products")} active={section === "products"} />
+        )}
       </nav>
 
       <div className="mt-auto pt-6">
