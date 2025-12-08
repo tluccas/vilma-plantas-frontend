@@ -5,6 +5,7 @@ import Orders from "../components/layout/Dashboard/Orders";
 import UserProfilePage from "../components/layout/Dashboard/sections/UserProfilePage";
 import Settings from "../components/layout/Dashboard/sections/Settings";
 import Category from "../components/layout/Dashboard/sections/Category";
+import Product from "../components/layout/Dashboard/sections/ProductDashboardMenu";
 import { Helmet } from "react-helmet-async";
 
 export default function Dashboard() {
@@ -25,6 +26,7 @@ export default function Dashboard() {
         {section === "profile" && <UserProfilePage />}
         {section === "settings" && <Settings />}
         {section === "categories" && <Category />}
+        {section === "products" && <Product />}
       </main>
     </div>
     </>
