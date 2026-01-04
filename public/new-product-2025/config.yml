@@ -1,14 +1,14 @@
 backend:
   name: git-gateway
-  branch: release/vitrine-1 # Branch onde os commits serão feitos
+  branch: prod/vitrine-1.0 # Branch onde os commits serão feitos
 
-media_folder: "vilma-plantas-frontend/public/images/uploads" # Caminho físico
+media_folder: "public/images/uploads" # Caminho físico
 public_folder: "/images/uploads" # Caminho na URL
 
 collections:
   - name: "products"
     label: "Produtos"
-    folder: "vilma-plantas-frontend/src/content/products" # Onde os JSONs serão salvos
+    folder: "src/content/products" # Onde os JSONs serão salvos
     create: true
     slug: "{{slug}}"
     format: "json"
