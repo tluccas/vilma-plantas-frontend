@@ -27,7 +27,7 @@ export default function Loading() {
     return (
         <div className="h-screen w-full bg-(--color-background) flex flex-col items-center justify-center select-none">
       {/* Ícone com animação */}
-      <img src="../../public/plant.svg"
+      <img src="plant.svg"
       className= "w-32 animate-plant-grow origin-bottom"
       alt="Carregando - Ícone de planta"
       />
