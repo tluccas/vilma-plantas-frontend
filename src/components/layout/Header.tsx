@@ -1,18 +1,10 @@
 import { useState } from "react";
-import { useAuthContext } from "../../features/auth/contexts/useAuthContext";
 
 export default function Header() {
-    const { isAuthenticated, user} = useAuthContext();
     const [mobile, setMobile] = useState(false);
     // Função para fechar menu mobile
     const closeMobileMenu = () => setMobile(false);
-    function loginVerify(){
-        if(isAuthenticated){
-            return true;
-        }else{
-            return false;
-        }
-    }
+
     // Lista de itens do menu principal
     const menuItems = [
         { name: 'Home', href: '/', icon: 'bi-house' },
@@ -25,7 +17,7 @@ export default function Header() {
             <nav className="flex w-full items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
                 
                 {/* Logo - Seção esquerda */}
-                <div className="flex lg:flex-1">
+                <div className="flex lg:flex">
                     <a href="/" className="flex items-center space-x-2 -m-1.5 p-1.5">
                         <span className="sr-only">Vilma Plantas</span>
                         <img 
@@ -38,7 +30,7 @@ export default function Header() {
                 </div>
 
                 {/* Menu Desktop - Centro */}
-                <div className="hidden lg:flex lg:gap-x-8">
+                <div className="hidden  lg:flex lg:gap-x-8">
                     {menuItems.map((item) => (
                         <a
                             key={item.name}
@@ -51,7 +43,7 @@ export default function Header() {
                     ))}
                 </div>
 
-                {/* Botões Login/Cadastro - Seção direita */}
+               { /*
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-3">
                     {loginVerify() ? (
                             // logado
@@ -82,7 +74,7 @@ export default function Header() {
                                 </a>
                             </>
                         )}
-                </div>
+                </div> */ }
 
                 {/* Botão Menu Mobile */}
                 <div className="flex lg:hidden">
