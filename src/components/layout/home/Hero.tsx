@@ -126,17 +126,19 @@ export default function Hero() {
                             {/* Estatísticas */}
                             <div className="flex items-center justify-center lg:mx-0 space-x-6 pt-4">
                                 <div className="text-center">
+                                    
+
                                     <div
                                         className="text-3xl font-bold"
                                         style={{ color: "#6cc24a" }}
                                     >
-                                        xxxx+
+                                        100%
                                     </div>
                                     <div
                                         className="text-sm font-medium"
                                         style={{ color: "#494949" }}
                                     >
-                                        Plantas
+                                        Natural
                                     </div>
                                 </div>
 
@@ -150,13 +152,13 @@ export default function Hero() {
                                         className="text-3xl font-bold"
                                         style={{ color: "#6cc24a" }}
                                     >
-                                        xxxx+
+                                        20+
                                     </div>
                                     <div
                                         className="text-sm font-medium"
                                         style={{ color: "#494949" }}
                                     >
-                                        Clientes
+                                        Variedade de Plantas
                                     </div>
                                 </div>
 
@@ -170,7 +172,7 @@ export default function Hero() {
                                         className="text-3xl font-bold"
                                         style={{ color: "#6cc24a" }}
                                     >
-                                        xx%
+                                        100%
                                     </div>
                                     <div
                                         className="text-sm font-medium"
