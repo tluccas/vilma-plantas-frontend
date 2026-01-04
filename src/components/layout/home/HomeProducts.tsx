@@ -1,21 +1,10 @@
-import { ProductService } from "../../../features/products/api/ProductServie";
-import type { ProductModel } from "../../../features/products/types/ProductType";
-import { useState, useEffect } from "react";
 import { ProductCards } from "../../../features/products/components/cards/ProductCards";
+import { ProductService } from "../../../features/products/api/ProductServie";
 
-const productService = new ProductService();
 
 export default function HomeProducts() {
-    const [products, setProducts] = useState<ProductModel[]>([]);
 
-    useEffect(() => {
-        async function loadProducts(){
-            const res = await productService.getProducts(1);
-            setProducts(res);
-        }
-
-        loadProducts();
-    }, []);
+        const products = ProductService.getProducts();
   
         return (
            <section className="top-categories px-4 sm:px-6 lg:px-8 py-6">

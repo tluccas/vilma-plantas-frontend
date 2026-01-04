@@ -1,43 +1,49 @@
-import { api } from "../../../lib/api";
-import type { ProductResponse, ProductModel, ProductTypeResponse } from "../types/ProductType";
+import type { ProductModel } from "../types/ProductType";
 
+// O Vite usa import.meta.glob (sem .env) para carregar arquivos
+const productFiles = import.meta.glob("../../../content/products/*.json", {
+  eager: true,
+});
+
+// Mapa para manter compatibilidade com lógica baseada em ID
+const CATEGORY_IDS: Record<string, number> = {
+  Interior: 1,
+  Exterior: 2,
+  Orquídeas: 3,
+  Mudas: 4,
+  Vasos: 5,
+};
 
 export class ProductService {
+  static getProducts(): ProductModel[] {
+    return Object.keys(productFiles).map((filePath, index) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const fileContent = productFiles[filePath] as any;
+      const data = fileContent.default || fileContent;
 
-    async getProducts(page: number, category?: number, minPrice?: number, maxPrice?: number): Promise<ProductModel[]> {
-        try {
-        const res = await api.get(
-            `/product?page=${page}&category=${category ?? ""}&minPrice=${
-            minPrice ?? ""
-            }&maxPrice=${maxPrice ?? ""}`
-        );
+      // Adapter
+      return {
+        id: index + 1, // ID temporário baseado no índice
+        name: data.name,
+        price: Number(data.price),
+        description: data.description,
+        stock: Number(data.stock || 0),
 
-        const data = res.data as ProductTypeResponse;
+        // Mocks para campos que o CMS não tem
+        category_id: CATEGORY_IDS[data.category] || 99,
+        category: {
+          name: data.category || "Categoria Desconhecida",
+        },
 
-        return data.products.map(mapProduct);
-        } catch (error: unknown) {
-        if (typeof error === "object" && error !== null && "response" in error) {
-            const err = error as { response?: { data?: { message?: string } } };
-            throw new Error(err.response?.data?.message);
-        }
-            throw new Error("Erro desconhecido.");
-        }
-    } 
-}
+        images: Array.isArray(data.images)
+          ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            data.images.map((img: any) => ({ url: img.url || img }))
+          : [{ url: data.image || "" }],
 
-export function mapProduct(product: ProductResponse) {
-    return {
-    id: product.id,
-    name: product.name,
-    price: parseFloat(product.price),
-    description: product.description,
-    category_id: product.category_id,
-    stock: product.stock,
-    createdAt: product.createdAt,
-    updatedAt: product.updatedAt,
-    category: {
-        name: product.category.name,
-    },
-    images: product.images,
-    };
+        // Campos obrigatórios do ProductModel
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      } as ProductModel;
+    });
+  }
 }
