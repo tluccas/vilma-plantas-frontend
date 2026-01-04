@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: prod/vitrine-1.0 # Branch onde os commits serão feitos
+  branch: release/vitrine-1 # Branch onde os commits serão feitos
 
 media_folder: "vilma-plantas-frontend/public/images/uploads" # Caminho físico
 public_folder: "/images/uploads" # Caminho na URL
