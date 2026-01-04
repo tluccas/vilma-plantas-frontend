@@ -1,0 +1,13 @@
+{
+  "description": "A Kalanchoe, popularmente conhecida como Flor da Fortuna, é uma planta suculenta que combina beleza, facilidade de cultivo e simbolismo de prosperidade. Com suas flores vibrantes que podem variar entre vermelho, rosa, amarelo e laranja, ela é perfeita para decorar ambientes internos e externos, trazendo vida e cor para qualquer espaço.",
+  "name": "Kalanchoe - Laranja",
+  "price": 18,
+  "category": "Interior",
+  "images": [
+    {
+      "url": "/images/uploads/kalanchoe.jpg"
+    }
+  ],
+  "stock": 23,
+  "featured": false
+}
