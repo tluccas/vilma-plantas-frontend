@@ -8,7 +8,7 @@ public_folder: "/images/uploads" # Caminho na URL
 collections:
   - name: "products"
     label: "Produtos"
-    folder: "src/content/products" # Onde os JSONs serão salvos
+    folder: "content/products" # Onde os JSONs serão salvos
     create: true
     slug: "{{slug}}"
     format: "json"
