@@ -1,7 +1,6 @@
 "use client";
 
 import Lottie from "lottie-react";
-import Header from "@/components/layout/Header";
 import animationData from "@/assets/animations/404 Page.json";
 import { useEffect } from "react";
 
@@ -15,7 +14,6 @@ export default function NotFound() {
   }, []);
   return (
     <>
-      <Header />
       <div className="flex flex-col items-center justify-center min-h-screen p-4 md:p-6 lg:p-10">
         <h1 className="font-bold tex-xl md:text-2xl lg:text-3xl">
           Ops, página não encontrada
