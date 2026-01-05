@@ -54,9 +54,11 @@ export function useAuth() {
   async function checkAuth() {
     try {
       const response = await authService.getProfile();
+      console.log("Profile response:", response.data); // DEBUG
       setUser(response.data.user);
       setIsAuthenticated(true);
-    } catch {
+    } catch (error) {
+      console.error("Auth check failed:", error); // DEBUG
       setUser(null);
       setIsAuthenticated(false);
     } finally {
