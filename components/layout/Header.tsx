@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { WhatsAppButton } from "../ui/WhatsappButton";
 
 export default function Header() {
   const [mobile, setMobile] = useState(false);
@@ -18,7 +19,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-white bg-(--color-background) shadow-md ">
       <nav className="flex w-full items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         {/* Logo - Seção esquerda */}
-        <div className="flex lg:flex">
+        <div className="flex lg:flex-1">
           <a href="/" className="flex items-center space-x-2 -m-1.5 p-1.5">
             <span className="sr-only">Vilma Plantas</span>
             <img
@@ -45,38 +46,9 @@ export default function Header() {
           ))}
         </div>
 
-        {/*
-                <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-3">
-                    {loginVerify() ? (
-                            // logado
-                            <a
-                                href="/dashboard"
-                                className="flex items-center space-x-2 px-4 py-2 text-sm font-medium text-gray-700 rounded-lg border border-gray-300 hover:bg-gray-50 transition-all"
-                            >
-                                <i className="bi bi-person-circle text-xl"></i>
-                                <span>{user?.name}</span>
-                            </a>
-                        ) : (
-                            // NÃO logado
-                            <>
-                                <a
-                                    href="/login"
-                                    className="flex items-center space-x-1 px-4 py-2 text-sm font-medium text-gray-700 rounded-lg border border-gray-300 transition-all duration-300 hover:bg-gray-50 hover:border-gray-400"
-                                >
-                                    <i className="bi bi-box-arrow-in-right"></i>
-                                    <span>Entrar</span>
-                                </a>
-                                <a
-                                    href="/register"
-                                    className="btn-primary flex items-center space-x-1 px-4 py-2 text-sm font-medium text-white rounded-lg transition-all duration-300 hover:scale-105"
-                                    style={{ backgroundColor: 'var(--color-primary)' }}
-                                >
-                                    <i className="bi bi-person-plus"></i>
-                                    <span>Cadastrar</span>
-                                </a>
-                            </>
-                        )}
-                </div> */}
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-3">
+          <WhatsAppButton text="Entre em Contato" />
+        </div>
 
         {/* Botão Menu Mobile */}
         <div className="flex lg:hidden">
@@ -141,24 +113,8 @@ export default function Header() {
 
               {/* Divisor */}
               <div className="border-t border-gray-200 py-6">
-                <div className="space-y-3">
-                  <a
-                    href="/login"
-                    onClick={closeMobileMenu}
-                    className="flex items-center space-x-2 rounded-lg px-3 py-3 text-base font-medium text-gray-700 transition-all duration-300 hover:bg-gray-50"
-                  >
-                    <i className="bi bi-box-arrow-in-right text-xl"></i>
-                    <span>Entrar</span>
-                  </a>
-                  <a
-                    href="/register"
-                    onClick={closeMobileMenu}
-                    className="btn-primary flex items-center justify-center space-x-2 rounded-lg px-3 py-3 text-base font-medium text-white transition-all duration-300 hover:scale-105"
-                    style={{ backgroundColor: "var(--color-primary)" }}
-                  >
-                    <i className="bi bi-person-plus text-xl"></i>
-                    <span>Cadastrar</span>
-                  </a>
+                <div className="flex justify-center">
+                  <WhatsAppButton text="Entre em Contato" size="lg" />
                 </div>
               </div>
             </div>
