@@ -16,7 +16,7 @@ collections:
       - {label: "Nome do Produto", name: "name", widget: "string"}
       - {label: "Preço", name: "price", widget: "number", value_type: "float"}
       - {label: "Estoque", name: "stock", widget: "number", default: 1}
-      - {label: "Categoria", name: "category", widget: "select", options: ["Interior", "Exterior", "Orquídeas", "Mudas", "Vasos"]}
+      - {label: "Categoria", name: "category", widget: "select", options: ["Interior", "Exterior", "Orquídeas", "Mudas", "Vasos", "Suculentas", "Samambaias", "Rosas"]}
       - {label: "Descrição", name: "description", widget: "markdown"}
       - {label: "Em Destaque?", name: "featured", widget: "boolean", default: false}
       
