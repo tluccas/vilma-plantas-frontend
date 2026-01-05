@@ -6,6 +6,9 @@ import { AuthProvider } from "@/features/auth/contexts/AuthProvider";
 export const metadata: Metadata = {
   title: "Vilma Plantas",
   description: "Sua loja de plantas online",
+  icons: {
+    icon: "/favicon.svg",
+  }
 };
 
 export default function RootLayout({
