@@ -14,19 +14,15 @@ interface Props {
   } | null;
 }
 
-export default function CategoryFormCreate({
-    onAdd,
-    initData
-}: Props) {
-
+export default function CategoryFormCreate({ onAdd, initData }: Props) {
   const isEdit = !!initData?.id;
 
   const { isAdmin } = useAuthContext();
   const [isCreating, setIsCreating] = useState(false);
-  const [ name, setName ] = useState(initData?.name || '');
-  const [ description, setDescription ] = useState(initData?.description || '');
+  const [name, setName] = useState(initData?.name || "");
+  const [description, setDescription] = useState(initData?.description || "");
 
-  async function handleSubmit(event: React.FormEvent){
+  async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
     if (!isAdmin) {
       alert("Você não tem permissão");
@@ -35,32 +31,33 @@ export default function CategoryFormCreate({
 
     setIsCreating(true);
     try {
+      if (isEdit) {
+        await categoryService.updateCategory(initData!.id, {
+          name,
+          description,
+        });
+      } else {
+        await categoryService.createCategory({ name, description });
+      }
 
-        if (isEdit) {
-            await categoryService.updateCategory(initData!.id, { name, description });
-        } else {
-            await categoryService.createCategory({ name, description });
-        
-        }
-
-        onAdd();
+      onAdd();
     } catch (error) {
       alert("Erro ao criar categoria");
       console.error(error);
     } finally {
-        setIsCreating(false);
+      setIsCreating(false);
     }
   }
 
-     useEffect(() => {
-       if (initData) {
-         setName(initData.name);
-         setDescription(initData.description);
-       } else {
-            setName('');
-            setDescription('');
-       }
-     }, [initData]);
+  useEffect(() => {
+    if (initData) {
+      setName(initData.name);
+      setDescription(initData.description);
+    } else {
+      setName("");
+      setDescription("");
+    }
+  }, [initData]);
   return (
     <form className="max-w-sm mx-auto space-y-4" onSubmit={handleSubmit}>
       <div>
@@ -84,7 +81,7 @@ export default function CategoryFormCreate({
           className="bg-neutral-secondary-medium border radius-border-default-medium text-heading text-sm rounded-xl focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
           placeholder=""
           required
-            value={description}
+          value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
       </div>
@@ -93,7 +90,11 @@ export default function CategoryFormCreate({
           type="submit"
           className="w-full px-4 py-2 bg-green-700 text-white rounded-md hover:bg-green-800 transition hover:cursor-pointer"
         >
-          {isCreating ? "Salvando..." : isEdit ? "Salvar Alterações" : "Criar Categoria"}
+          {isCreating
+            ? "Salvando..."
+            : isEdit
+            ? "Salvar Alterações"
+            : "Criar Categoria"}
         </button>
       </div>
     </form>

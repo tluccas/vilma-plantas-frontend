@@ -15,13 +15,15 @@ export class ProductService {
   static getProducts(): ProductModel[] {
     // Lê os arquivos diretamente do sistema de arquivos
     const productsDir = path.join(process.cwd(), "content/products");
-    
+
     // Verifica se o diretório existe
     if (!fs.existsSync(productsDir)) {
       return [];
     }
 
-    const files = fs.readdirSync(productsDir).filter((file) => file.endsWith(".json"));
+    const files = fs
+      .readdirSync(productsDir)
+      .filter((file) => file.endsWith(".json"));
 
     return files.map((file, index) => {
       const filePath = path.join(productsDir, file);
@@ -43,7 +45,9 @@ export class ProductService {
         },
 
         images: Array.isArray(data.images)
-          ? data.images.map((img: { url?: string }) => ({ url: img.url || img }))
+          ? data.images.map((img: { url?: string }) => ({
+              url: img.url || img,
+            }))
           : [{ url: data.image || "" }],
 
         // Campos obrigatórios do ProductModel
