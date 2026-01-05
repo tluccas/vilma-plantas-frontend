@@ -1,6 +1,7 @@
 "use client";
 
 import { useAuthContext } from "@/features/auth/contexts/useAuthContext";
+import CountUp from "react-countup";
 
 export default function Hero() {
   const { isAuthenticated } = useAuthContext();
@@ -126,7 +127,12 @@ export default function Hero() {
                   className="text-3xl font-bold"
                   style={{ color: "#6cc24a" }}
                 >
-                  100%
+                  <CountUp
+                    end={100}
+                    duration={1.5}
+                    suffix="%"
+                    enableScrollSpy={true}
+                  />
                 </div>
                 <div
                   className="text-sm font-medium"
@@ -146,7 +152,12 @@ export default function Hero() {
                   className="text-3xl font-bold"
                   style={{ color: "#6cc24a" }}
                 >
-                  20+
+                  <CountUp
+                    end={20}
+                    duration={1.5}
+                    suffix="+"
+                    enableScrollSpy={true}
+                  />
                 </div>
                 <div
                   className="text-sm font-medium"
@@ -166,7 +177,12 @@ export default function Hero() {
                   className="text-3xl font-bold"
                   style={{ color: "#6cc24a" }}
                 >
-                  100%
+                  <CountUp
+                    end={100}
+                    duration={1.5}
+                    suffix="%"
+                    enableScrollSpy={true}
+                  />
                 </div>
                 <div
                   className="text-sm font-medium"
