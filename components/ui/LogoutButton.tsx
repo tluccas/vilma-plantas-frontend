@@ -1,6 +1,7 @@
 "use client";
 
 import { useAuthContext } from "@/features/auth/contexts/useAuthContext";
+import { useRouter } from "next/navigation";
 
 interface Props {
   variant?: "primary" | "secondary" | "danger";
@@ -14,6 +15,7 @@ export default function LogoutButton({
   className = "",
 }: Props) {
   const { logout, loading } = useAuthContext();
+  const router = useRouter();
 
   const baseStyles =
     "inline-flex items-center justify-center font-semibold letter-spacing-wide border-none cursor-pointer focus:outline-none transition-all duration-300 ease-out";
@@ -40,9 +42,9 @@ export default function LogoutButton({
   async function handleLogout() {
     try {
       await logout();
-      // Redirecionamento será feito automaticamente pelas rotas protegidas
+      router.push("/");
     } catch (error) {
-      // console.error("Erro ao fazer logout:", error);
+      console.error("Erro ao fazer logout:", error);
     }
   }
 
