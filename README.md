@@ -2,7 +2,7 @@
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
 ---
@@ -56,7 +56,7 @@ Inclui integração com a API do backend, além de apresentar um design limpo, a
 
 - **React** (Biblioteca UI)
 - **TypeScript** (Tipagem Estática)
-- **Vite** (Build Tool)
+- **NextJS** (Framework React)
 - **TailwindCSS** (Estilização)
 - **ESLint** (Linter)
 
@@ -65,25 +65,36 @@ Inclui integração com a API do backend, além de apresentar um design limpo, a
 ## 📂 Estrutura do Projeto
 
 ```
-vilma-plantas/
-├─ public/                   # Arquivos estáticos públicos
-├─ src/
-│    ├─ assets/              # Imagens, ícones e fontes
-│    ├─ components/          # Componentes reutilizáveis (Botões, Inputs, etc.)
-│    ├─ features/            # Funcionalidades específicas do domínio
-│    ├─ hooks/               # Custom Hooks do React
-│    ├─ lib/                 # Configurações de bibliotecas externas (ex: API client)
-│    ├─ pages/               # Páginas da aplicação (Home, Produto, Login)
-│    ├─ routes/              # Configuração das rotas da aplicação
-│    ├─ store/               # Gerenciamento de estado global
-│    ├─ styles/              # Estilos globais e configurações do Tailwind
-│    ├─ utils/               # Funções auxiliares e formatadores
-│    ├─ App.tsx              # Componente raiz da aplicação
-│    └─ main.tsx             # Ponto de entrada do React
-├─ index.html                # HTML principal
-├─ package.json              # Dependências e scripts
-├─ tsconfig.json             # Configurações do TypeScript
-├─ vite.config.ts            # Configurações do Vite
+vilma-plantas-frontend/
+├─ app/                        # App Router do Next.js (páginas e layouts)
+│    ├─ (main)/                # Grupo de rotas com Header/Footer
+│    │    ├─ layout.tsx        # Layout com Header e Footer
+│    │    ├─ page.tsx          # Página Home (/)
+│    │    ├─ login/            # Página de Login
+│    │    ├─ register/         # Página de Cadastro
+│    │    └─ produtos/         # Página de Produtos
+│    ├─ dashboard/             # Dashboard (sem Header/Footer)
+│    │    ├─ layout.tsx        # Layout protegido
+│    │    └─ page.tsx          # Página do Dashboard
+│    ├─ layout.tsx             # Layout raiz (AuthProvider)
+│    ├─ globals.css            # Estilos globais
+│    └─ not-found.tsx          # Página 404
+├─ components/                 # Componentes reutilizáveis
+│    ├─ layout/                # Header, Footer, Dashboard, Home
+│    ├─ products/              # Componentes de produtos
+│    ├─ ui/                    # Componentes de UI (botões, inputs, auth)
+│    └─ user/                  # Componentes de usuário
+├─ features/                   # Funcionalidades por domínio
+│    ├─ auth/                  # Autenticação (contexts, hooks, services)
+│    └─ products/              # Produtos (api, types, components)
+├─ hooks/                      # Custom Hooks globais
+├─ lib/                        # Configurações (API client)
+├─ public/                     # Arquivos estáticos
+├─ types/                      # Types globais
+├─ package.json                # Dependências e scripts
+├─ tailwind.config.ts          # Configurações do TailwindCSS
+├─ tsconfig.json               # Configurações do TypeScript
+├─ next.config.ts              # Configurações do Next.js
 └─ README.md
 ```
 
@@ -103,8 +114,8 @@ vilma-plantas/
 
 - [x] Configuração inicial com Vite e TypeScript
 - [x] Configuração do TailwindCSS
-- [ ] Desenvolvimento dos componentes base
-- [ ] Integração  com a API Backend
+- [x] Desenvolvimento dos componentes base
+- [x] Integração  com a API Backend
 - [ ] Implementação do Carrinho de Compras
 - [ ] Deploy da aplicação
 
