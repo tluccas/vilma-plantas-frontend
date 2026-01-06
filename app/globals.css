@@ -1,6 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-@import "bootstrap-icons/font/bootstrap-icons.css";
 @import "tailwindcss";
+
+/* =========================================
+   0. Cores Customizadas para Tailwind CSS 4
+   ========================================= */
+@theme {
+  --color-heading: #473f3f;
+  --color-body: #494949;
+  --color-surface: #554b4c;
+  --color-primary: #6cc24a;
+  --color-neutral-primary-soft: #e8e5dc;
+  --color-neutral-primary-hard: #42393a;
+    /* Section bg alt */
+  --color-section-alt-bg: #d6d6d6;
+}
 
 /* =========================================
    1. Animações com Tailwind CSS
@@ -66,8 +79,7 @@
 
   --button-secondary-hover-bg: #554b4c;
 
-  /* Section bg alt */
-  --color-section-alt-bg: #d6d6d6;
+
   /* Espaçamento & Layout */
   --spacing-sm: 0.5rem; /* 8px */
   --spacing-md: 1rem; /* 16px */
@@ -176,33 +188,6 @@ img {
   max-width: var(--container-width);
   margin: 0 auto;
   padding: 0 var(--spacing-md);
-}
-
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.flex-between {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.flex-col {
-  display: flex;
-  flex-direction: column;
-}
-
-.mt-1 {
-  margin-top: var(--spacing-md);
-}
-.mt-2 {
-  margin-top: var(--spacing-lg);
-}
-.mb-1 {
-  margin-bottom: var(--spacing-md);
 }
 
 /* Texto Destaque */

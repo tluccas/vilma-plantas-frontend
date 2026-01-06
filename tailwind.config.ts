@@ -7,7 +7,20 @@ export default {
     "./features/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        heading: "var(--color-text)",
+        body: "var(--color-text-muted)",
+        surface: "var(--color-surface)",
+        primary: "var(--color-primary)",
+      },
+      screens: {
+        xs: "475px",
+      },
+      maxWidth: {
+        "screen-7xl": "1600px",
+      },
+    },
   },
   plugins: [],
 } satisfies Config;

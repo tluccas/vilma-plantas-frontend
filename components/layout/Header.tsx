@@ -16,7 +16,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky lg:relative top-0 z-50 w-full border-b border-gray-300 bg-(--color-background) shadow-md">
+    <header className="sticky bg-(--color-background) lg:relative top-0 z-50 w-full border-b border-gray-300 shadow-md">
       <nav className="flex w-full items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         {/* Logo - Seção esquerda */}
         <div className="flex lg:flex-1">
