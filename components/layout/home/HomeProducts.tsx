@@ -8,7 +8,7 @@ export default function HomeProducts() {
   
         return (
           <section className="top-categories px-4 sm:px-6 lg:px-8 py-6">
-            <h2 className="mt-2 mb-10 text-xl sm:text-2xl font-semibold text-heading text-center">
+            <h2 className="subtitle mt-2 mb-10 text-xl sm:text-2xl font-semibold text-heading text-center">
               Vitrine{" "}
               <span className="relative">
                 <span style={{ color: "#6cc24a" }}>Botânica</span>
