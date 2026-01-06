@@ -7,7 +7,7 @@ type ProductCardProps = {
 
 export function ProductCards({ product, redirectUrl }: ProductCardProps) {
   return (
-    <div className="max-w-md mx-auto rounded-md overflow-hidden shadow-md transition-transform hover:scale-103">
+    <div className="max-w-md bg-neutral-primary-soft mx-auto rounded-md overflow-hidden shadow-md/30 transition-transform hover:scale-103">
       <div className="relative w-full h-40 sm:h-48 lg:h-56 overflow-hidden">
         <img
           className="w-full h-full object-cover"

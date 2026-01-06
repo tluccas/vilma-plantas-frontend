@@ -8,9 +8,9 @@ export default function Hero() {
 
   function handleButtonClick() {
     if (isAuthenticated) {
-      window.location.href = "/carrinho";
+      window.location.href = "/produtos";
     } else {
-      window.location.href = "/login";
+      window.location.href = "/produtos";
     }
   }
 
