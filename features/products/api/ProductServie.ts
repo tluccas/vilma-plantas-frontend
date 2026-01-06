@@ -8,11 +8,14 @@ export class ProductService {
   static async getProducts(): Promise<ProductModel[]> {
     try {
       const { data } = await api.get<ProductTypeResponse>("/product");
-      
+
       // Converte price de string para number se necessário
       return data.products.map((product) => ({
         ...product,
-        price: typeof product.price === "string" ? parseFloat(product.price) : product.price,
+        price:
+          typeof product.price === "string"
+            ? parseFloat(product.price)
+            : product.price,
       })) as ProductModel[];
     } catch (error) {
       console.error("Erro ao buscar produtos:", error);
@@ -28,7 +31,8 @@ export class ProductService {
       const { data } = await api.get<ProductModel>(`/product/${id}`);
       return {
         ...data,
-        price: typeof data.price === "string" ? parseFloat(data.price) : data.price,
+        price:
+          typeof data.price === "string" ? parseFloat(data.price) : data.price,
       } as ProductModel;
     } catch (error) {
       console.error("Erro ao buscar produto:", error);
@@ -39,12 +43,19 @@ export class ProductService {
   /**
    * Busca produtos por categoria
    */
-  static async getProductsByCategory(categoryId: number): Promise<ProductModel[]> {
+  static async getProductsByCategory(
+    categoryId: number
+  ): Promise<ProductModel[]> {
     try {
-      const { data } = await api.get<ProductTypeResponse>(`/product?category_id=${categoryId}`);
+      const { data } = await api.get<ProductTypeResponse>(
+        `/product?category_id=${categoryId}`
+      );
       return data.products.map((product) => ({
         ...product,
-        price: typeof product.price === "string" ? parseFloat(product.price) : product.price,
+        price:
+          typeof product.price === "string"
+            ? parseFloat(product.price)
+            : product.price,
       })) as ProductModel[];
     } catch (error) {
       console.error("Erro ao buscar produtos por categoria:", error);

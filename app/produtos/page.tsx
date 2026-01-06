@@ -21,7 +21,7 @@ export default async function ProductsPage() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Título da página */}
         <div className="text-center mb-12">
-          <SubTitle text="Nossas" highlight="Plantas" className="mb-2!"/>
+          <SubTitle text="Nossas" highlight="Plantas" className="mb-2!" />
           <p className="text-sm text-gray-600 mt-2 max-w-2xl mx-auto">
             Descubra nossa coleção de plantas selecionadas para deixar seu
             ambiente mais verde e acolhedor
