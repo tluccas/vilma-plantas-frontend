@@ -114,6 +114,7 @@ export default function Hero() {
                   e.currentTarget.style.backgroundColor = "transparent";
                   e.currentTarget.style.color = "#473f3f";
                 }}
+                onClick={handleButtonClick}
               >
                 <i className="bi bi-play-circle mr-2 text-xl"></i>
                 Ver Catálogo
