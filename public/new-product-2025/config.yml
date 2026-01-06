@@ -1,14 +1,17 @@
 backend:
-  name: git-gateway
-  branch: release/vitrine-1 # Branch onde os commits serão feitos
+  name: github
+  repo: "tluccas/vilma-plantas-cms"
+  branch: main # Branch onde os commits serão feitos
+  base_url: https://decap-cms-oauth.vercel.app
+  auth_endpoint: auth
 
-media_folder: "vilma-plantas-frontend/public/images/uploads" # Caminho físico
+media_folder: "public/images/uploads" # Caminho físico
 public_folder: "/images/uploads" # Caminho na URL
 
 collections:
   - name: "products"
     label: "Produtos"
-    folder: "vilma-plantas-frontend/src/content/products" # Onde os JSONs serão salvos
+    folder: "content/products" # Onde os JSONs serão salvos
     create: true
     slug: "{{slug}}"
     format: "json"
@@ -16,7 +19,7 @@ collections:
       - {label: "Nome do Produto", name: "name", widget: "string"}
       - {label: "Preço", name: "price", widget: "number", value_type: "float"}
       - {label: "Estoque", name: "stock", widget: "number", default: 1}
-      - {label: "Categoria", name: "category", widget: "select", options: ["Interior", "Exterior", "Orquídeas", "Mudas", "Vasos"]}
+      - {label: "Categoria", name: "category", widget: "select", options: ["Interior", "Exterior", "Orquídeas", "Mudas", "Vasos", "Suculentas", "Samambaias", "Rosas"]}
       - {label: "Descrição", name: "description", widget: "markdown"}
       - {label: "Em Destaque?", name: "featured", widget: "boolean", default: false}
       
