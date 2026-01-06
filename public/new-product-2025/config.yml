@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: "tluccas/vilma-plantas-cms"
   branch: main # Branch onde os commits serão feitos
+  base_url: https://decap-cms-oauth.vercel.app
+  auth_endpoint: auth
 
 media_folder: "public/images/uploads" # Caminho físico
 public_folder: "/images/uploads" # Caminho na URL
