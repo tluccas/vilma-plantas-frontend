@@ -17,14 +17,14 @@ export default function Footer() {
                 Vilma Plantas
               </span>
             </a>
-            <div className="flex items-center mt-2">
+            {/* <div className="flex items-center mt-2">
               <p className="text-gray-800 text-sm">
                 <span className="text-orange-600 font-bold">ATENÇÃO: </span>
                 Este é um projeto em fase de desenvolvimento
               </p>
-            </div>
+            </div> */}
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-2">
             <div className="text-center">
               <h2 className="mb-6 text-sm font-semibold text-heading uppercase">
                 Desenvolvedores
@@ -63,7 +63,7 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="text-center">
+            {/* <div className="text-center">
               <h2 className="mb-6 text-sm font-semibold text-heading uppercase">
                 Legal
               </h2>
@@ -79,20 +79,20 @@ export default function Footer() {
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
         <hr className="my-6 border-gray-300 sm:mx-auto lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-body sm:text-center">
-            © 2025{" "}
+            © {new Date().getFullYear()}{" "}
             <a
               href="https://www.linkedin.com/in/lucasalvesz/"
               className="hover:underline"
             >
-              Alves Dev
+              Alves Dev & Vilma Plantas
             </a>
-            . All Rights Reserved.
+            . Todos os direitos reservados.
           </span>
           <div className="flex mt-4 sm:justify-center sm:mt-0">
             <a
